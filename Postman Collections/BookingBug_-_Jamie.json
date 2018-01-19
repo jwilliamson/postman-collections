@@ -1,0 +1,584 @@
+{
+  "info": {
+    "name": "BookingBug - Jamie",
+    "_postman_id": "dcf9b8d8-a53f-4f5e-b596-0a3b3ba9f703",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "824c6462-17c1-484d-be07-ce4f44c8b775",
+      "name": "Public",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "984e18e4-b659-450c-916d-d6a3a2b8b2d4",
+          "name": "company",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "028dffa6-e509-4615-b8e0-e7e639d2c6f8",
+              "name": "search",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": "",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "a3044da6-2222-40b4-927b-01e0bf509c68",
+              "name": "company",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": {
+                  "raw": "{{url}}/api/v1/company/{{company_id}}?embed=no_child_companies",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "company",
+                    "{{company_id}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "embed",
+                      "value": "no_child_companies",
+                      "equals": true
+                    }
+                  ]
+                },
+                "description": null
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "abf0a8e3-4df0-4a3c-acc5-9c1b326c543e",
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "dd6048cc-333b-4e45-bb1d-7e8a9c1364c5",
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json()",
+                  "pm.environment.set(\"Auth-Token\", jsonData.auth_token);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\"\n}"
+            },
+            "url": "{{url}}/api/v1/login/admin/{{parent_company_id}}",
+            "description": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "162993ae-f8d2-4028-84ee-a1eb41230c08",
+      "name": "Admin",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c0eb7d77-56bb-48fd-9d2c-fef300f61902",
+          "name": "people",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "e0083c2a-e3a6-4c61-8784-0e2f5f4212b7",
+              "name": "people",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  },
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/people",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "73697675-264f-499d-b639-d599b0f43415",
+              "name": "people",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": \"Jamie\",\n\t\"email\": \"jwilliamson@bookingbug.com\"\n}"
+                },
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "91048ec2-931d-4c37-af09-9a5dba6200a3",
+              "name": "people/new",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/new",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "51e83245-fbda-4e46-a545-711d1fa5ee27",
+              "name": "people/id",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/15711",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "ee2e7c0f-f246-4785-99f3-daaab431feee",
+              "name": "people",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people",
+                "description": null
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "43646f4c-25fb-4930-9df3-8c1d9d93cdb5",
+          "name": "services",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "3a415f6b-251e-4ee7-8476-bb1a05117897",
+              "name": "services",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/services",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "644a46bd-6296-4ec2-adc6-51668fed21f3",
+              "name": "service/id",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/services/54553",
+                "description": null
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "62b49a22-0207-4995-8094-290daec29f85",
+          "name": "groups",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "eb21ae7c-1ed4-4f17-80dd-4377812960fd",
+              "name": "group",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  },
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/groups",
+                "description": null
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "250ac5b0-9ade-41fb-8d52-83419ee24d4b",
+          "name": "company [parent]",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{url}}/api/v1/admin/{{parent_company_id}}/company",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ac4ed99b-5042-4204-a51c-026b7a9bb10f",
+          "name": "company",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{url}}/api/v1/admin/{{company_id}}/company",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4323af9b-c031-4476-9e0b-d46f2ca7d036",
+          "name": "company",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              },
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"address\": {\n\t\t\"long\": 93.255168,\n\t\t\"lat\": 44.988722\n\t}\n}"
+            },
+            "url": "{{url}}/api/v1/admin/37166/company",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "555e27ba-11b7-4140-851a-a14059ca0544",
+          "name": "addresses",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Auth-Token",
+                "value": "{{Auth-Token}}"
+              },
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              }
+            ],
+            "body": {},
+            "url": "{{url}}/api/v1/37166/addresses",
+            "description": null
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "2bdb2107-d4a9-4f77-aa49-5c9cb4bc1d4a",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "a8e0d9b9-94a2-4744-81cf-1a4e06f10e17",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
