@@ -122,6 +122,51 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "f32e11ea-f751-4903-d1b6-b955d19984cc",
+          "name": "Login copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "dd6048cc-333b-4e45-bb1d-7e8a9c1364c5",
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json()",
+                  "pm.environment.set(\"Auth-Token\", jsonData.auth_token);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "App-Id",
+                "value": "{{App-Id}}"
+              },
+              {
+                "key": "App-Key",
+                "value": "{{App-Key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": "{{url}}/api/v1/login/admin/{{parent_company_id}}",
+            "description": null
+          },
+          "response": []
         }
       ]
     },
