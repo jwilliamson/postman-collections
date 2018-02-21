@@ -169,39 +169,6 @@
               "response": []
             },
             {
-              "_postman_id": "846a7466-e219-6df2-78eb-053e5653c57f",
-              "name": "people copy",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "App-Id",
-                    "value": "{{App-Id}}"
-                  },
-                  {
-                    "key": "App-Key",
-                    "value": "{{App-Key}}"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Cache-Control",
-                    "value": "no-cache"
-                  },
-                  {
-                    "key": "Auth-Token",
-                    "value": "{{Auth-Token}}"
-                  }
-                ],
-                "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/people",
-                "description": null
-              },
-              "response": []
-            },
-            {
               "_postman_id": "73697675-264f-499d-b639-d599b0f43415",
               "name": "people",
               "request": {
@@ -299,6 +266,39 @@
                 ],
                 "body": {},
                 "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/15711",
+                "description": null
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "846a7466-e219-6df2-78eb-053e5653c57f",
+              "name": "people copy",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-Key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                  },
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  }
+                ],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/people",
                 "description": null
               },
               "response": []
