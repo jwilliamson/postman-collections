@@ -113,9 +113,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\"\n}"
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}"
             },
-            "url": "{{url}}/api/v1/login/admin/{{parent_company_id}}"
+            "url": "{{url}}/api/v1/login/admin/{{company_id}}"
           },
           "response": []
         }
