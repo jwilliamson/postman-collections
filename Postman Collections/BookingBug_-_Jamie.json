@@ -419,9 +419,26 @@
               "name": "company - find by ref",
               "request": {
                 "method": "GET",
-                "header": [],
+                "header": [
+                  {
+                    "key": "App-Id",
+                    "value": "{{App-Id}}"
+                  },
+                  {
+                    "key": "App-key",
+                    "value": "{{App-Key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Auth-Token",
+                    "value": "{{Auth-Token}}"
+                  }
+                ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/company/find_by_ref/9553"
+                "url": "{{url}}/api/v1/admin/{{company_id}}/company/find_by_ref/09553"
               },
               "response": []
             }
