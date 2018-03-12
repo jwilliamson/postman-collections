@@ -554,7 +554,7 @@
             "method": "GET",
             "header": [],
             "body": {},
-            "url": ""
+            "url": "{{url}}/api/v1/admin/{{company_id}}/company/find_by_ref/9553"
           },
           "response": []
         }
