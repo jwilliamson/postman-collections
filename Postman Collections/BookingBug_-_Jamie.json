@@ -546,6 +546,17 @@
             "url": "{{url}}/api/v1/37166/addresses"
           },
           "response": []
+        },
+        {
+          "_postman_id": "8aa96881-e4aa-4847-b5ba-2322167f539a",
+          "name": "company - find by ref",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": ""
+          },
+          "response": []
         }
       ]
     }
