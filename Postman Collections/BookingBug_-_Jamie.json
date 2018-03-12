@@ -413,7 +413,19 @@
           "_postman_id": "378e1c6a-a963-45c6-a532-959d735f8535",
           "name": "company",
           "description": null,
-          "item": [],
+          "item": [
+            {
+              "_postman_id": "8aa96881-e4aa-4847-b5ba-2322167f539a",
+              "name": "company - find by ref",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": "{{url}}/api/v1/admin/{{company_id}}/company/find_by_ref/9553"
+              },
+              "response": []
+            }
+          ],
           "_postman_isSubFolder": true
         },
         {
@@ -544,17 +556,6 @@
             ],
             "body": {},
             "url": "{{url}}/api/v1/37166/addresses"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8aa96881-e4aa-4847-b5ba-2322167f539a",
-          "name": "company - find by ref",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "url": "{{url}}/api/v1/admin/{{company_id}}/company/find_by_ref/9553"
           },
           "response": []
         }
