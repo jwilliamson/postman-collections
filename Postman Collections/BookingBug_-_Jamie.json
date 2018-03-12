@@ -1,8 +1,7 @@
 {
   "info": {
-    "name": "BookingBug - Jamie",
     "_postman_id": "dcf9b8d8-a53f-4f5e-b596-0a3b3ba9f703",
-    "description": "",
+    "name": "BookingBug - Jamie",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -23,8 +22,7 @@
                 "method": "GET",
                 "header": [],
                 "body": {},
-                "url": "",
-                "description": null
+                "url": ""
               },
               "response": []
             },
@@ -70,8 +68,7 @@
                       "equals": true
                     }
                   ]
-                },
-                "description": null
+                }
               },
               "response": []
             }
@@ -118,8 +115,7 @@
               "mode": "raw",
               "raw": "{\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\"\n}"
             },
-            "url": "{{url}}/api/v1/login/admin/{{parent_company_id}}",
-            "description": null
+            "url": "{{url}}/api/v1/login/admin/{{parent_company_id}}"
           },
           "response": []
         }
@@ -163,8 +159,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/people",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{company_id}}/people"
               },
               "response": []
             },
@@ -199,8 +194,7 @@
                   "mode": "raw",
                   "raw": "{\n\t\"name\": \"Jamie\",\n\t\"email\": \"jwilliamson@bookingbug.com\"\n}"
                 },
-                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people"
               },
               "response": []
             },
@@ -232,8 +226,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/new",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/new"
               },
               "response": []
             },
@@ -265,8 +258,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/15711",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people/15711"
               },
               "response": []
             },
@@ -298,8 +290,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{parent_company_id}}/people"
               },
               "response": []
             }
@@ -339,8 +330,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/services",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{company_id}}/services"
               },
               "response": []
             },
@@ -372,8 +362,7 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/services/54553",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{company_id}}/services/54553"
               },
               "response": []
             }
@@ -413,12 +402,18 @@
                   }
                 ],
                 "body": {},
-                "url": "{{url}}/api/v1/admin/{{company_id}}/groups",
-                "description": null
+                "url": "{{url}}/api/v1/admin/{{company_id}}/groups"
               },
               "response": []
             }
           ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "378e1c6a-a963-45c6-a532-959d735f8535",
+          "name": "company",
+          "description": null,
+          "item": [],
           "_postman_isSubFolder": true
         },
         {
@@ -449,8 +444,7 @@
               }
             ],
             "body": {},
-            "url": "{{url}}/api/v1/admin/{{parent_company_id}}/company",
-            "description": null
+            "url": "{{url}}/api/v1/admin/{{parent_company_id}}/company"
           },
           "response": []
         },
@@ -482,8 +476,7 @@
               }
             ],
             "body": {},
-            "url": "{{url}}/api/v1/admin/{{company_id}}/company",
-            "description": null
+            "url": "{{url}}/api/v1/admin/{{company_id}}/company"
           },
           "response": []
         },
@@ -518,8 +511,7 @@
               "mode": "raw",
               "raw": "{\n\t\"address\": {\n\t\t\"long\": 93.255168,\n\t\t\"lat\": 44.988722\n\t}\n}"
             },
-            "url": "{{url}}/api/v1/admin/37166/company",
-            "description": null
+            "url": "{{url}}/api/v1/admin/37166/company"
           },
           "response": []
         },
@@ -551,8 +543,7 @@
               }
             ],
             "body": {},
-            "url": "{{url}}/api/v1/37166/addresses",
-            "description": null
+            "url": "{{url}}/api/v1/37166/addresses"
           },
           "response": []
         }
